@@ -194,41 +194,5 @@ public partial class MainWindow : Window
 
     }
 
-
-
-
-    //private void SelectFile_Button_Click(object sender, RoutedEventArgs e)
-    //{
-    //     IL FILE è IN UN ARCHIVIO .ZIP QUINDI è RIMASTO SEMPRE TXT
-    //    //creo messsage box per file da comprimere
-    //    string messageBoxTextC = "stai scegliendo un file da comprimere?";
-    //    string titleC = "Compress";
-    //    MessageBoxButton buttonC = MessageBoxButton.YesNo;
-    //    MessageBoxImage imageC = MessageBoxImage.None;
-    //    MessageBoxResult selectC = MessageBox.Show(messageBoxTextC, titleC, buttonC, imageC, MessageBoxResult.Yes);
-    //    switch (selectC)
-    //    {
-    //        case MessageBoxResult.Yes:
-
-    //            //apre finestra di dialogo
-    //            OpenFileDialog file = new OpenFileDialog();
-    //            //utente sceglie file
-    //            file.Filter = "txt files (*.txt)|*.txt";    //|All files (*.*)|*.*    
-
-    //            Nullable<bool> result = file.ShowDialog();
-    //            if (result == true)     //utente seleziona 'apri'
-    //            {
-    //                file_path = file.FileName;      //la proprietà FileName restituisce il percorso completo
-    //            }
-
-    //            break;
-    //        case MessageBoxResult.No:
-    //            break;
-    //    }
-
-
-
-
-
 }
 

@@ -29,18 +29,12 @@ namespace progettoWpf
     {
         public ZipArchive Archive { get; set; }
 
-       // public ZipArchiveEntry Entries { get; set; }
-       
-
         public Picker(ZipArchive archive)
         {
             Archive = archive;
             InitializeComponent();
             lista.SelectAll();
 
-            //Entries = 
-         
-           
         }
 
         private void Estrai_entries_click(object sender, RoutedEventArgs e)
@@ -51,8 +45,6 @@ namespace progettoWpf
 
             var selectedE = lista.SelectedItems.Cast<ZipArchiveEntry>().ToList();
 
-            //var aa = lista.SelectedItems;
-
             this.Close();
 
             MessageBox.Show("Scegli dove estrarre");
@@ -60,25 +52,9 @@ namespace progettoWpf
             Nullable<bool> result = folder.ShowDialog();
             if (result ?? false)
             {
-                //List<string> l = ["test.txt"];
-                //List<string> l = [@"cart_test/"];
-                //List<string> l = [@"bbb\a\gg.txt"];
-
-                //Class1.Extract(archive, l, folder.FolderName);
-
-                //Debug.WriteLine(aa);
-                //Debug.WriteLine(selectedE);
                 Class1.Extract(selectedE, folder.FolderName);
                 MessageBox.Show("Decompressione riuscita");
             }
-
-            
-            //if(selectedE.Count > 0)
-            //{
-            //    DialogResult = true;               
-            //}
-            
-
    
         }
     }
