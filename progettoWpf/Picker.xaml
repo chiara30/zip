@@ -16,7 +16,12 @@
         <ListBox x:Name="lista" ItemsSource="{Binding File}" SelectionMode="Extended">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <TextBlock Text="{Binding Elm}" Background="Beige"/>
+                    <TextBlock x:Name="block" Text="{Binding Elm}" />
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding ArchiveEntry.UsesEncryption}" Value="true">
+                            <Setter TargetName="block" Property="Background" Value="Beige"></Setter>
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
