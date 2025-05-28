@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:progettoWpf"
+        xmlns:local="clr-namespace:progettoWpf"  
         DataContext="{Binding RelativeSource={x:Static RelativeSource.Self}}"
         mc:Ignorable="d"
         Title="Picker" Height="450" Width="800">
@@ -13,9 +13,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="lista" ItemsSource="{Binding Archive}" SelectionMode="Extended"></ListBox>
-        <Button HorizontalAlignment="Right" Grid.Row="1" Margin="20" Padding="5" FontSize="20" Click="Estrai_entries_click">Estrai</Button>
-        
+        <ListBox x:Name="lista" ItemsSource="{Binding File}" SelectionMode="Extended">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Elm}" Background="Beige"/>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Button HorizontalAlignment="Left" Grid.Row="1" Margin="40 20" Padding="5" FontSize="20" Click="Estrai_entries_click">Estrai</Button>
+        <Button HorizontalAlignment="Center" Grid.Row="1" Margin="20" Padding="5" FontSize="20" Click="Aggiorna_click">Aggiorna password</Button>
+        <Button HorizontalAlignment="Right" Grid.Row="1" Margin="20" Padding="5" FontSize="20" Click="Togli_Click">Togli password</Button>
     </Grid>
     
 </Window>
