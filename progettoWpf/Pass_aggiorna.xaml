@@ -10,7 +10,19 @@
         <DataGrid ItemsSource="{Binding Lista}" SelectionMode="Extended" CanUserAddRows="False" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Elemento" Binding="{Binding Elm}" IsReadOnly="True" />
-                <DataGridTextColumn x:Name="grid_psw" Header="Password" Binding="{Binding PswStrana, UpdateSourceTrigger=LostFocus}" />
+                <DataGridTemplateColumn Header="Password">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <local:CustomPasswordBox Password="{Binding PswStrana, Mode=OneWay}" IsEnabled="False" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                    <DataGridTemplateColumn.CellEditingTemplate>
+                        <DataTemplate>
+                            <local:CustomPasswordBox Password="{Binding PswStrana, UpdateSourceTrigger=LostFocus}" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellEditingTemplate>
+                </DataGridTemplateColumn>
+                
             </DataGrid.Columns>
         </DataGrid>
         <!--<Button HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="20" Padding="5" FontSize="20" Click="Aggiorna_Click">Aggiorna password</Button>--> 
